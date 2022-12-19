@@ -37,10 +37,8 @@ const pizza = {
     category: "main",
     popularity: "10",
     rating: "5",
-    
-
-
-}
+    tags: ['kids', 'gluten-free', 'thin crust']
+};
 
 
 
@@ -53,7 +51,7 @@ const pizza = {
 */
 
 //CODE HERE
-
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -63,7 +61,7 @@ const pizza = {
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -73,7 +71,9 @@ const pizza = {
 */
 
 //CODE HERE
-
+let { rating } = pizza;
+rating = 5;
+console.log({ rating });
 
 /*
     Fourth, and last, destructure the category
@@ -83,7 +83,8 @@ const pizza = {
 */
 
 //CODE HERE
-
+const { category } = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -98,7 +99,24 @@ const pizza = {
 */
 
 //CODE HERE
-
+const sushi = [
+    {
+        name: "yum yum roll",
+        price: 12.99,
+        category: "roll",
+        popularity: 8,
+        rating: 10,
+        tags: ["adults", "savoury", "cheesy"],
+    },
+    {
+        name: "dragon pheonix roll",
+        price: 14.99,
+        category: "roll",
+        popularity: 6,
+        rating: 9,
+        tags: ["adults", "spicy", "eel-sauce"],
+    },
+];
 
 
 //////////////////PROBLEM 4////////////////////
@@ -114,8 +132,8 @@ const pizza = {
 */
 
 //CODE HERE
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = sushi.filter((food) => food.tags.includes("eel-sauce"));
+console.log(filteredFood);
 
 
 
@@ -159,7 +177,16 @@ const pizza = {
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type) {
+    const filteredSushi = sushi.filter((food) => {
+        if (type === "above") {
+            return food[property] >= number;
+        } else {
+            return food[property] < number;
+        }
+    });
+    return filteredSushi
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -169,3 +196,4 @@ const pizza = {
 */
 
 //CODE HERE
+console.log(filterByProperty("rating", 9, "above"));

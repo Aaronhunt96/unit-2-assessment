@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price,0)
+console.log(summedPrice)
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,6 +56,14 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax){
+    let taxPrice = cartTotal * tax
+    let subTotal = taxPrice + cartTotal
+    let finalPrice = subTotal - couponValue
+    return finalPrice.toFixed(2);
+
+}
+console.log(calcFinalPrice(10, 5, .07))
 
 
 
@@ -78,8 +88,11 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+    age, because it could help with getting them the right server or table.
+    name, its important to know your customers name.
+    attitude, could be useful knowing how they usually act towards others.
+    order, could help with speeding things up and getting them what they want quicker.
+     
 */
 
 /*
@@ -87,4 +100,9 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+let customer = {
+    'name': 'Kimberly',
+    'attitude': 'relaxed',
+    'age': '35',
+    'order': 'black-coffee',
+};

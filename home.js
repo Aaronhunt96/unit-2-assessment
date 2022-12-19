@@ -21,7 +21,9 @@
     'Welcome back, Andrew'
 */
 
-//CODE HERE
+let greetUser = username => {
+    return "Welcome back," + username
+}
 
 
 
@@ -48,10 +50,18 @@
 */
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
-
+console.log(deliveryAreaZipCodes.length)
 //CODE HERE
-
-
+function canWeDeliver(zipCode){
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++){
+        // console.log(deliveryAreaZipCodes[i])
+        if(deliveryAreaZipCodes[i] === zipCode){
+            return "We can deliver in this area"
+        }
+    }
+    return "Sorry, we dont deliver in your area"
+}
+console.log(canWeDeliver(85220))
 
 /* 
     Problem 2 Continued
@@ -107,6 +117,9 @@ const deals = [
 */
 
 //CODE HERE
+deals[0].title=deals[0].title.replace('15%','10%')
+
+console.log (deals[0].title)
 
 
 
@@ -124,3 +137,5 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc=deals[1].desc.replace('March', 'April').trim();
+console.log(deals[1].desc)
